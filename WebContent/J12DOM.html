@@ -210,6 +210,8 @@
 
             switch(userNum-comNum){
                 case 1: case -2: //이겼습니다.
+                /*DOM같은경우 한번만 등록해놓으면 되므로 이처럼 실행할때마다 읽어오도록 할 필요는 없는것이다.
+                실무에서는 DOM은 따로 빼놓는것이 일반적이다*/
                 document.getElementById("result").innerText = "이겼습니다.";
                 console.log("이겼습니다");
                 break;
@@ -257,6 +259,7 @@
     <input type="button" value="가위" onclick="game(0);" >
     <input type="button" value="바위" onclick="game(1);">
     <input type="button" value="보"  onclick="game(2);">
+    <!-- <button onclick="game(1);">바위</button> -->
     
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
