@@ -6,26 +6,33 @@
     <title>J13Window01Location.html</title>
 
     <script>
-        function fnLogin() {
-            //아이디, 패스워드에 입력한 값을 DOM을 통해 가져오기
-            var id = document.getElementById("user_id").value;
-            var pw = document.getElementById("user_pw").value;
+/*
+location 객체
+    -페이지를 이동할때 사용한다.
+    -html의 a태그와 동일한 역할을 한다.
+    -target을 걸어야 할 경우에는 '타겟.location' 형태로 사용한다.
+    -프레임이나 팝업창같이 depth가 존재하면 단계를 통해 target을 지정할 수 있다.
+*/
+    function fnLogin() {
+        //아이디, 패스워드에 입력한 값을 DOM을 통해 가져오기
+        var id = document.getElementById("user_id").value;
+        var pw = document.getElementById("user_pw").value;
 
-            /*
-            window객체는 JS에서 최상위 객체이므로 생략가능.
-            Java에서 Object객체와 동일한 개념
-            */
-            if(id=="Kim" && pw=="1234") {
-                window.location.href = "./pages/history01.html";
-            }
-            else{
-                location.href = "./pages/history02.html";
-            }
+        /*
+        window객체는 JS에서 최상위 객체이므로 생략가능.
+        Java에서 Object객체와 동일한 개념
+        */
+        if(id=="Kim" && pw=="1234") {
+            window.location.href = "./pages/history01.html";
         }
-        function fnLoginIframe() {
-            //타겟을 지정할때는 location객체앞에 타겟명을 기술한다.
-            frmArea.location.href="./pages/history01.html";
+        else{
+            location.href = "./pages/history02.html";
         }
+    }
+    function fnLoginIframe() {
+        //타겟을 지정할때는 location객체앞에 타겟명을 기술한다.
+        frmArea.location.href="./pages/history01.html";
+    }
     </script>
 </head>
 <body>

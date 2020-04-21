@@ -20,18 +20,21 @@
             /*
             DOM (Document Object Model)
             태그명으로 DOM객체 얻어오기. 2개이상 존재할 수 있으므로
-            배열로 얻어오게 된다.
+            배열로 얻어오게 된다. 
+            해당 객체가 없을 경우 길이가 0인 배열을 반환한다.
+            document객체의 getElementXXX() 계열의 함수를 통해 DOM을 얻어올 수 있다. 
+
             */
             var inputs = document.getElementsByTagName("input");
             var checkString = "", inputString;
-
+            
             //얻어온 input태그의 요소 갯수만큼 반복
             for(var i=0; i<inputs.length ; i++){
                 //얻어온 DOM이 checkbox이면서 check된 상태인지를 확인
                 if(inputs[i].type == "checkbox" && inputs[i].checked==true){
                     checkString += getString(inputs[i].value)+" ";//정치 연예
 
-                    // //임시 삽입
+                    // 임시 삽입
                     // input[i].type = "text";
                     // input[i].size = 10;
                 }
@@ -85,7 +88,6 @@
     </ul>
     <button onclick="fnGetDomain();">도메인 얻어오기</button>
 
-
     <br>//////////////////////////////////<br>
 
     <script>
@@ -102,12 +104,12 @@
             for(var i=0 ; i<names.length ; i++){
                 //checkbox의 상태변경은 아래 두가지 변경이 가능
                 if(names[i].checked == true){
-                    //names[i].checked = null; 
                     names[i].checked = false;
+                    //names[i].checked = null; 
                 }
                 else if(names[i].checked == false){
-                    //names[i].checked = "checked";
                     names[i].checked = true;
+                    //names[i].checked = "checked";
                 }
             }
         }
@@ -132,6 +134,7 @@
     
     <h2>클래스명으로 객체 얻기</h2>
     <ul>
+        <!-- href="#"은 top버튼과 같다. -->
         <li><a href="#" class="portal">네<b>이</b>버</a></li>
         <li><a href="#" class="portal">다음</a></li>
         <li><a href="#" class="portal">네이트</a></li>
@@ -169,6 +172,12 @@
         <img id="trump" src="" width="100" alt="이미지교체하기">
         
     </fieldset>
+<!-- 
+    fieldset은 관련있는 form 그룹들을 라인으로 묶는다.
+    legend 태그로 fieldset의 제목을 설정할 수 있다.
+ -->
+
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <!-- 연습문제 -->

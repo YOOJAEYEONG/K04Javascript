@@ -6,90 +6,90 @@
     <title>Document</title>
 </head>
 <body>
-        <!-- 연습문제 -->
-        <script>
-            /*
-            1: 가위 - 2: 바위 	= -1 : 졌다. 
-            1: 가위 - 3: 보	= -2 : 이겼다.
-            1: 가위 - 1: 가위 	= 0	 : 비겼다.
-            2: 바위 - 1: 가위	= 1	 : 이겼다
-            2: 바위 - 2: 바위	= 0	 : 비겼다
-            2: 바위 - 3: 보	= -1 : 졌다
-            3: 보    - 1: 가위	= 2  : 졌다.
-            3: 보    - 2: 바위	= 1  : 이겼다.
-            3: 보    - 3: 보	= 0  : 비겼다.
-            */
-                   
-                    function game(userNum){
-                        var comNum = parseInt((Math.random()*10)%3);
-                        var imgTagCom = document.getElementById("imgCom");
-                        var imgTagUser = document.getElementById("imgUser");
-                        
-                        var imgRock = "./images/rock.jpg";
-                        var imgScissors = "./images/scissors.jpg";
-                        var imgPaper = "./images/paper.jpg";
+    <!-- 연습문제 -->
+    <script>
+        /*
+        1: 가위 - 2: 바위 	= -1 : 졌다. 
+        1: 가위 - 3: 보	= -2 : 이겼다.
+        1: 가위 - 1: 가위 	= 0	 : 비겼다.
+        2: 바위 - 1: 가위	= 1	 : 이겼다
+        2: 바위 - 2: 바위	= 0	 : 비겼다
+        2: 바위 - 3: 보	= -1 : 졌다
+        3: 보    - 1: 가위	= 2  : 졌다.
+        3: 보    - 2: 바위	= 1  : 이겼다.
+        3: 보    - 3: 보	= 0  : 비겼다.
+        */
+                
+    function game(userNum){
+        var comNum = parseInt((Math.random()*10)%3);
+        var imgTagCom = document.getElementById("imgCom");
+        var imgTagUser = document.getElementById("imgUser");
+        
+        var imgRock = "./images/rock.jpg";
+        var imgScissors = "./images/scissors.jpg";
+        var imgPaper = "./images/paper.jpg";
+
+        
+        switch(comNum){
+            case 0: imgTagCom.src = imgScissors;    break;
+            case 1: imgTagCom.src = imgRock;    break;
+            case 2: imgTagCom.src = imgPaper;   break;
+        }
+        switch(userNum){
+            case 0: imgTagUser.src = imgScissors;   break;
+            case 1: imgTagUser.src = imgRock;   break;
+            case 2: imgTagUser.src = imgPaper;  break;
+        }
+
+        switch(userNum-comNum){
+            case 1: case -2: //이겼습니다.
+            /*DOM같은경우 한번만 등록해놓으면 되므로 이처럼 실행할때마다 읽어오도록 할 필요는 없는것이다.
+            실무에서는 DOM은 따로 빼놓는것이 일반적이다*/
+            document.getElementById("result").innerText = "이겼습니다.";
+            console.log("이겼습니다");
+            break;
+            case -1: case 2: //졌습니다
+            document.getElementById("result").innerText = "졌습니다.."; 
+            console.log("졌습니다");
+            break;
+            case 0: //비겼습니다.
+            document.getElementById("result").innerText = "비겼습니다."; 
+            console.log("비겼습니다");
+            break;
+        }  
+    }
+    </script>
+
+
+    <style>
+        tr:first-child td{
+            width: 100px;
+            text-align: center;
+        }
+        img{
+            height: 250px;
+            width: 250px;
+        }    
+    </style>
+
+    <table border="1"  >
+        <tr>
+            <td >컴퓨터</td>
+            <td>나</td>
+        </tr>
+        <tr class="a">
+            <td><img id="imgCom" src="./images/start.png" alt="com" ></td>
+            <td><img id="imgUser" src="./images/start.png" alt="user" ></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="result" style="color: red;">&nbsp;</td>
             
-                        
-                        switch(comNum){
-                            case 0: imgTagCom.src = imgScissors;    break;
-                            case 1: imgTagCom.src = imgRock;    break;
-                            case 2: imgTagCom.src = imgPaper;   break;
-                        }
-                        switch(userNum){
-                            case 0: imgTagUser.src = imgScissors;   break;
-                            case 1: imgTagUser.src = imgRock;   break;
-                            case 2: imgTagUser.src = imgPaper;  break;
-                        }
-            
-                        switch(userNum-comNum){
-                            case 1: case -2: //이겼습니다.
-                            /*DOM같은경우 한번만 등록해놓으면 되므로 이처럼 실행할때마다 읽어오도록 할 필요는 없는것이다.
-                            실무에서는 DOM은 따로 빼놓는것이 일반적이다*/
-                            document.getElementById("result").innerText = "이겼습니다.";
-                            console.log("이겼습니다");
-                            break;
-                            case -1: case 2: //졌습니다
-                            document.getElementById("result").innerText = "졌습니다.."; 
-                            console.log("졌습니다");
-                            break;
-                            case 0: //비겼습니다.
-                            document.getElementById("result").innerText = "비겼습니다."; 
-                            console.log("비겼습니다");
-                            break;
-                        }  
-                    }
-                </script>
-            
-            
-                <style>
-                    tr:first-child td{
-                        width: 100px;
-                        text-align: center;
-                    }
-                    img{
-                        height: 250px;
-                        width: 250px;
-                    }    
-                </style>
-            
-                <table border="1"  >
-                    <tr>
-                        <td >컴퓨터</td>
-                        <td>나</td>
-                    </tr>
-                    <tr class="a">
-                        <td><img id="imgCom" src="./images/start.png" alt="com" ></td>
-                        <td><img id="imgUser" src="./images/start.png" alt="user" ></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" id="result" style="color: red;">&nbsp;</td>
-                        
-                    </tr>       
-                </table>
-                <input type="button" value="가위" onclick="game(0);" >
-                <input type="button" value="바위" onclick="game(1);">
-                <input type="button" value="보"  onclick="game(2);">
-                <!-- <button onclick="game(1);">바위</button> -->
+        </tr>       
+    </table>
+    <input type="button" value="가위" onclick="game(0);" >
+    <input type="button" value="바위" onclick="game(1);">
+    <input type="button" value="보"  onclick="game(2);">
+    <!-- <button onclick="game(1);">바위</button> -->
                 
 </body>
 </html>

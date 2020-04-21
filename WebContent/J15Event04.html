@@ -52,12 +52,13 @@
             var items = obj.options.length;
             alert("총아이템:"+items);
 
-            alert("value값얻기:"+obj.value);
-            alert("value값얻기:"+obj.options[obj.selectedIndex].value);
+            alert("value값얻기1:"+obj.value);
+            alert("value값얻기2:"+obj.options[obj.selectedIndex].value);
             //alert("value값:"+obj.options[1].value);//위와같음
 
-            alert("텍스트얻기:"+obj[obj.selectedIndex].text);
-            alert("텍스트얻기:"+obj.options[obj.selectedIndex].text);
+            alert("텍스트얻기0:"+obj.text);//undefined
+            alert("텍스트얻기1:"+obj[obj.selectedIndex].text);
+            alert("텍스트얻기2:"+obj.options[obj.selectedIndex].text);
 
             for(var i=0; i<items ; i++){
                 if(obj.options[i].selected==true){
