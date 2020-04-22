@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J17CssControl.html</title>
+    <script>
+        var pTag, pSize;
+
+        window.onload = function(){
+            pTag = document.getElementById("article");
+            pSize = parseInt(pTag.style.fontSize);
+        }
+
+        function fnArticle(flag){
+            switch(flag){
+                case "+":
+                    pSize += 10;
+                    pTag.style.fontSize = pSize+"px";
+                break;
+                case "-":
+                    pSize -= 10;
+                    pTag.style.fontSize = pSize+"px";
+                break;
+                case "R":
+                    pTag.style.color = "red";
+                break;
+                case "G":
+                    pTag.style.color = "green";
+                
+                break;
+                case "B":
+                    pTag.style.color = "blue";
+                break;
+                case "Bo":
+                    pTag.style.fontWeight = "bold";
+                break;
+                case "No":
+                    pTag.style.fontWeight = "normal";
+                break;
+                case "Ce":
+                    pTag.style.textAlign = "center";
+                break;
+                case "Le":
+                    pTag.style.textAlign = "left";
+                break;
+                default:
+                    pTag.style.color = "black";
+            }
+        }
+        var next = 0;
+        function setFont(){
+            var changerFont = document.getElementById("article");
+            var fontArr = ["Verdana", "굴림체", "휴먼옛체", "궁서", "Impact"];
+
+            changerFont.style.fontFamily = fontArr[next++];
+            if(next==5) {  next=0; }
+
+            /*
+            [일정 범위의 수 구하기]
+            이렇게 하면 next는 계속 증가하지만 0~4까지의 숫자를 얻어낼 수 있다.
+             */
+            var fontIndex = next % 5;
+            //next++;
+        }
+
+    /*
+    문제] 글꼴바꾸기 버튼을 계속 누를때마다 아래 5가지
+    폰트가 토글되어 적용될수 있도록 함수를 정의하시오.
+    글꼴 : Verdana, 굴림체, 휴먼옛체, 궁서, Impact
+
+    function setFont(){
+        실행부;
+    }
+    */
+
+    </script>
+</head>
+<body>
+    <h2>자바스크립트로 CSS제어하기</h2>
+    <input type="button" value="글꼴바꾸기" onclick="setFont();">
+    <fieldset>
+        <legend>신문기사</legend>
+        <button onclick="fnArticle('+');">+</button>
+        <button onclick="fnArticle('-');">-</button>
+        <button onclick="fnArticle('R');">Red</button>
+        <button onclick="fnArticle('G');">Green</button>
+        <button onclick="fnArticle('B');">Blue</button>
+        <button onclick="fnArticle('');">Black</button>
+        <button onclick="fnArticle('Bo');">볼드체</button>
+        <button onclick="fnArticle('No');">보통체</button>
+        <button onclick="fnArticle('Ce');">가운데정렬</button>
+        <button onclick="fnArticle('Le');">좌측정렬</button>
+    </fieldset>
+    <p style="font-size: 12px; " id="article">
+        
+        오늘의 뉴스 <br>
+        (서울=연합뉴스) 전명훈 기자 = 회사 매각을 앞두고 신종코로나바이러스 감염증(코로나19) 영향까지 겹쳐 운항이 전면 중단된 이스타항공의 항공기 조종사들이 22일 회사 측에 국내선 운항을 재개하라고 요구했다.
+        <br>
+        이스타항공 조종사노조는 이날 민주노총 전국공공운수노동조합에 가입한 뒤 서울 영등포구 공공운수노조 회의실에서 기자회견을 열고 이같이 촉구했다.
+        <br>
+        The union of the pilots of the airline joined the KCTU National Public Transport Workers' Union and held a press conference at the public transportation union meeting room in Yeongdeungpo-gu, Seoul.
+    </p>
+</body>
+</html>

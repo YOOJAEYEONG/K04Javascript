@@ -20,20 +20,20 @@
         document.write("링크걸기(내장함수):"+str4.link('http://naver.com'));
 
         //특정 인덱스의 문자 하나를 얻어온다.
-        document.write("<h2>chatAt(인덱스)</h2>");
-        document.write(str1.charCodeAt(1)); //결과 : e
+        document.write("<h2>charAt(인덱스)</h2>");
+        document.write(str1.charAt(1)); //결과 : e
         
         //문자열 잘라내기1
         document.write("<h2>substring(시작, 끝)</h2>");
-        document.write("Acamedy".substring(3,7)); //결과 : demy
+        document.write("Academy".substring(3,7)); //결과 : demy
         
         //문자열 잘라내기2
         document.write("<h2>substr(시작, 길이)</h2>");
-        document.write("Acamedy".substring(3,4)); //결과 : demy
+        document.write("Academedy".substr(3,4)); //결과 : demy
         
         //특정 인덱스의 문자의 아스키코드 값 얻어오기
         document.write("<h2>charCodeAt(인덱스)</h2>");
-        document.write("Acamedy".charCodeAt(1)); 
+        document.write("Academedy".charCodeAt(1)); 
 
         //아스키코드를 문자로 변경하기
         document.write("<h2>String.fromCharCode(아스키코드)<h2>");
