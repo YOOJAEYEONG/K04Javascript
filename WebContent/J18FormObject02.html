@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J18FormObject02.html</title>
+    <script>
+
+        //name속성으로 checkbox의 DOM객체를 얻어옴
+        var chkArr = document.getElementsByName("spo");
+
+        function allChecked(){
+            for(var i=0;i<chkArr.length ; i++){
+                chkArr[i].checked = "checked";
+                //chkArr[i].checked = true;
+                //체크시에는 두가지 방법이 있다
+            }
+        }
+
+        function allUnChecked(){
+            for(var i=0;i<chkArr.length ; i++){
+                chkArr[i].checked = null;
+                //chkArr[i].checked = false;
+                //체크시에는 두가지 방법이 있다.
+            }
+        }
+        function allReverse(){
+            //체크박스에서 체크여부를 검사할때는 반드시 true/false만 가능
+            for(var i=0;i<chkArr.length ; i++){
+                if(chkArr[i].checked==true ) {
+                    chkArr[i].checked=false;
+                }
+                else {
+                    chkArr[i].checked=true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>check box 전체 선택 / 해제  /반전하기</h2>
+
+    <fieldset>
+        <legend>좋아하는 운동 2가지만 고르세요</legend>
+        <input type="checkbox" name="spo" value="야구">야구
+        <input type="checkbox" name="spo" value="농구">농구
+        <input type="checkbox" name="spo" value="축구">축구
+        <input type="checkbox" name="spo" value="배구">배구
+        <input type="checkbox" name="spo" value="핸드볼">헨드볼
+        <input type="checkbox" name="spo" value="테니스">테니스
+        <input type="checkbox" name="spo" value="골프">골프
+
+        <p>
+            <button type="button" onclick="allChecked();"> 전체선택하기</button>
+            <button type="button" onclick="allUnChecked();"> 전체해제하기</button>
+            <button type="button" onclick="allReverse();"> 반전선택하기</button>
+        </p>
+    </fieldset>
+</body>
+</html>
