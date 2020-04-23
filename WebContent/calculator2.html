@@ -79,7 +79,10 @@
         function calculator(){
             var shown = document.getElementById("display").innerHTML;
             console.log(shown);
-            display.innerHTML = eval(number1+cal+number2); 
+            display.innerHTML = eval(number1+cal+number2).toFixed(2); 
+            /*
+            num.toFixed(2) : 소수점 결과시 자리를 2째 자리까지만 출력되도록 한다.
+            */
         }
         function cancle(){
             display.innerHTML = 0;
@@ -111,12 +114,12 @@
 
     <table >
         <tr>
-            <td colspan="4" rowspan="2" id="display"
+            <td colspan="4" rowspan="2" id="display" 
                  style="font-size: 40px; font-weight: bold;
                   text-align: right ; padding-right: 20px; 
                   background-color: #70C738;
-                  color: black;">
-                  0
+                  color: black; overflow: hidden;">
+                 0
             </td>
             <!-- <td>2</td>
             <td>3</td>
