@@ -7,6 +7,9 @@
 <title>id_overapping.jsp</title>
 <script type="text/javascript">
     function idUse(){
+        // 자식창에서 opener속성으로 부모창으로 데이터를 전송한다.
+        //부모창의 아이디 입력필드가 readOnly로 변경됐으로 
+        //JS을 통해 값을 변경해야함
         opener.document.registFrm.id.value = 
             document.overlapFrm.retype_id.value;
         self.close();
@@ -16,6 +19,10 @@
 <body>
     <h2>아이디 중복확인하기</h2>
 
+    <!-- 
+        파라미터로 전달된 아이디를 브라우저에 출력한다.
+        차후JDBC연동을 통해 회원테이블을 확인하게 된다.
+     -->
     <h3>부모창에서 입력한 아이디: <%=request.getParameter("id") %> </h3>
 
     <h3>아이디가 중복되었을때 재입력한 아이디</h3>
