@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline;
+        }
+        
+    </style>
+    <script>
+        var ranNum, times=0;
+        
+
+        //var inputNum = document.getElementsByTagName("input")[0];
+        //var imgSrc = document.getElementsByTagName("img")[0];
+
+        var button2 = document.getElementsByTagName("button");
+
+        console.log(button2.length); // 0
+        button2[0].addEventListener('click', function(){
+            console.log('test');
+        }); 
+        //Uncaught TypeError: 
+        //  Cannot read property 'addEventListener' of undefined
+
+        
+
+
+
+
+
+        function game(){
+            ranNum = parseInt(Math.random()*100+1);
+            console.log(ranNum);
+            
+
+
+
+
+            console.log('sdf');//ok
+            //document.getElementsByTagName("div")[1].innerHTML = times++;
+            
+            if(ranNum==inputNum){
+                console.log(3);
+                imgSrc.src = "./images/answer.jpeg";
+            }
+            
+            
+            
+            
+            if(ranNum>inputNum){
+                console.log(1);
+                imgSrc.src = "./images/down.jpg"
+            }
+            if(ranNum<inputNum){
+                console.log(2);
+                imgSrc.src = "./images/up.jpg"
+            }
+            
+            
+            if(times==7){
+                alert('주어진 기회를 모두 사용했습니다.=>재시작');
+                times=0;
+                window.location.reload();
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <h2>업다운게임</h2>
+    <h4>1~100숫자를 입력하세요</h4>
+
+    <div>시도횟수 :</div>
+    <div>0</div>
+    <div>회</div>
+    <br>
+
+    숫자입력 : <input type="text" size="5" >
+    <!-- <button type="button" onclick="game();">확인</button> -->
+    <button type="button">확인</button>
+    
+    <br>
+    <img id="img" src="./images/updowngame.jpg" width="250">
+</body>
+</html>
