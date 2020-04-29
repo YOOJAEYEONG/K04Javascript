@@ -20,8 +20,10 @@ Date 객체
         //0~11까지 숫자를 반환해서 +1해야 현재월이 된다.
         document.write("월 변환:"+(date.getMonth())+"<br>");
 
+        document.write("getYear()그대로 출력: "+date.getYear()+"<br>");
         document.write(
             (date.getYear()+1900)+"년 "+
+            date.getFullYear()+"년"+
             (date.getMonth()+1)+"월 "+
             date.getDate()+"일 "+
             date.getHours()+"시 "+
