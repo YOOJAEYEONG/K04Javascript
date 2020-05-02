@@ -83,6 +83,7 @@
                         showArray(arr);
                     }
                 }
+               
 		    }
         }
 
@@ -92,6 +93,21 @@
             }
             document.write('<br>');
         }
+        var d = function(){
+            var copy = arr;
+            document.write("<h4>forEach()이용:</h4>");
+            copy.forEach(element => {
+                document.write(element+" ");
+            });
+            document.write("<br>");
+            copy.sort(); // ASCII 문자 순서로 정렬되어 숫자의 크기대로 나오지 않음
+            copy.forEach(element => {
+                document.write(element+" ");
+            });
+           
+            document.write("<br>====================<br>");
+        }
+        d();
         
         
         //정렬전 배열 출력

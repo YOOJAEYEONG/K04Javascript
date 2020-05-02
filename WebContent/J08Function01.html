@@ -32,8 +32,8 @@
         noParamNoReturn();
 
         //무명함수의 형태
-        var yesParamNoReturn = function(start, end)
-        {
+        //var yesParamNoReturn = (start, end) => {
+        var yesParamNoReturn = function(start, end) {
             var sum = 0;
             for( var i = start ; i <= end ; i++){
                 sum += i;
@@ -57,7 +57,7 @@
             // JS에서는 에러가 발생하지 않는다. 단 실행은 되지 않는다.
             document.write('return 문 이후 출력문');
         }
-        document.write(noParamYesReturn());
+        document.write(noParamYesReturn);
 
         var yesParamYesReturn = function(num1, num2){
             return num1>num2 ? num1 : num2 ;
