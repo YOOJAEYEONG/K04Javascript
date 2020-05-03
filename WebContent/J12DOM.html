@@ -23,7 +23,6 @@
             배열로 얻어오게 된다. 
             해당 객체가 없을 경우 길이가 0인 배열을 반환한다.
             document객체의 getElementXXX() 계열의 함수를 통해 DOM을 얻어올 수 있다. 
-
             */
             var inputs = document.getElementsByTagName("input");
             var checkString = "", inputString;
@@ -42,8 +41,6 @@
                 if(inputs[i].type == "text" && inputs[i].name=="txt"){
                     inputString = inputs[i].value;
                 }
-                
-                
             }
             alert("선택한 값: "+checkString+", 입력한 값:"+  inputString);
 

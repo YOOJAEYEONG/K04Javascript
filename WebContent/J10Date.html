@@ -13,10 +13,11 @@ Date 객체
         document.write("<h2>JS의 Core객체 = Date</h2>");
 
         var date = new Date();
-        document.write("저장된값:"+Date + "<br>");
+        document.write("저장된값:"+date + "<br>");
 
         //1900년도 부터 현재까지의 지난 년도를 반환.
         document.write("연도변환:"+(date.getYear())+ "<br>");
+        document.write("연도변환:"+date.getFullYear()+ "<br>");
         //0~11까지 숫자를 반환해서 +1해야 현재월이 된다.
         document.write("월 변환:"+(date.getMonth())+"<br>");
 
@@ -63,7 +64,7 @@ Date 객체
 
         /*
         getTime() : 1970년 1월1일부터 현재까지 지난 시간을 
-            초단위로 반환해주는 함수. 1/1000초 단위의 시간을 반환함.
+            밀리초단위로 반환해주는 함수. 1/1000초 단위의 시간을 반환함.
         */
         var diff = startDate.getTime() - endDate.getTime();
 
