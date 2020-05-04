@@ -4,100 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>연습</title>
-<script>
-    function findZipcode(){
 
-        open("./pages/zipcode.html",
-            "Zip",
-            "width=400, height=400, left=150, top=100, location=no,"+
-            " toolbar=no, menubar=no, scrollbar=yes, resizable=no");
-    }
-
-
-    var winObj;
-
-    function popFirst(){
-        winObj = open("./pages/popup01.html",
-            "pop1",
-            "width=300, height=300, left=50, top=50");
-    }
-    function popClose(){
-        alert('close popup');
-        winObj.close();
-    }
-
-    function openChild(){
-        open('./pages/openChild1st.html',
-        'child1',
-        'width=300, height=300, left=0, top=0');
-    }
-
-    function screenCenterPop(){
-        var s_width = window.screen.width;
-        var s_height = window.screen.height;
-        alert('screen resolution: '+s_width+'x'+s_height);
-
-        var leftVar = s_width/2 -300/2;
-        var topVar = s_height/2 - 300/2;
-        open('./pages/popup01.html',
-            "popup",
-            "width=300, height=300, left="+leftVar+", top="+topVar);
-    }
+   
+   
+   <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2152_RC04/embed_loader.js"></script>
+  <script type="text/javascript">
+    trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"geo":"","time":"today 12-m"}],"category":0,"property":"youtube"}, {"exploreQuery":"gprop=youtube&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"});
+  </script>
 
 
 
 
-</script>
+
+
 </head>
  
 <body>
 
-<h3>this is parent window</h3>
-<fieldset>
 
-    
-    <legend>Search ZipCode</legend>
-    <table>
-        <tr>
-            <td>ZipCode</td>
-            <td>
-                <input type="text" id="zipcode" size="5">
-                <button onclick="findZipcode();">Search ZipCode</button>
-            </td>
-        </tr>
-        <tr>
-            <td>addr1</td>
-            <td>
-                <input type="text" id="addr1" size="30">
-            </td>
-        </tr>
-        <tr>
-            <td>addr2</td>
-            <td>
-                <input type="text" id="addr2" size="40">
-            </td>
-        </tr>
-    </table>
-</fieldset>
 
-<h2>control:child in parent window</h2>
-<p>
-    <button onclick="popFirst();">first popup open</button>
-    <button onclick="popClose();">first popup close</button>
 
-</p>
 
-<h2>popup window with screen resolution</h2>
-<p>
-    <button onclick="screenCenterPop();">popup window on screen center</button>
 
-</p>
 
-<h2>adjust parent from popup of popup</h2>
-<p>
-    <input type="button" id="btnFirst" onclick="openChild();" value="openChild1">
 
-</p>
 
 
 
