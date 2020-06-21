@@ -30,6 +30,7 @@
                 <input type="radio" name="rad" value="1"
                 onclick="choiceOne(this.value);">운동
             </label>
+            
             <input type="radio" name="rad" id="rad_2"
                 value="2" onclick="choiceOne(this.value);">
             <label for="rad_2">공부</label>
@@ -90,6 +91,7 @@
         //운동을 선택할때 - 2개만 선택가능
         function spoChoice(){
             var fn = document.choiceFrm;
+            console.log("fn: ", fn);
             //체크된 항목을 카운트하기위한 변수
             var chkNum =0;
 

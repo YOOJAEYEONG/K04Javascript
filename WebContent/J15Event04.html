@@ -48,18 +48,18 @@
             var obj2 = document.getElementById("fruit");
 
             //selectIndex와 selectedIndex의 차이?
-            alert("선택항목의 인덱스:"+ obj2.selectedIndex);
+            console.log("선택항목의 인덱스:"+ obj2.selectedIndex);
 
             var items = obj.options.length;
-            alert("총아이템:"+items);
+            console.log("총아이템:"+items);
 
-            alert("value값얻기1:"+obj.value);
-            alert("value값얻기2:"+obj.options[obj.selectedIndex].value);
+            console.log("value값얻기1:"+obj.value);
+            console.log("value값얻기2:"+obj.options[obj.selectedIndex].value);
             //alert("value값:"+obj.options[1].value);//위와같음
 
-            alert("텍스트얻기0:"+obj.text);//undefined
-            alert("텍스트얻기1:"+obj[obj.selectedIndex].text);
-            alert("텍스트얻기2:"+obj.options[obj.selectedIndex].text);
+            console.log("텍스트얻기0:"+obj.text);//undefined
+            console.log("텍스트얻기1:"+obj[obj.selectedIndex].text);
+            console.log("텍스트얻기2:"+obj.options[obj.selectedIndex].text);
 
             for(var i=0; i<items ; i++){
                 if(obj.options[i].selected==true){
